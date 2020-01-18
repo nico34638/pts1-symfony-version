@@ -1,4 +1,3 @@
-# templates/base.html.twig
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,24 +5,89 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Home{% endblock %}</title>
         {% block stylesheets %}
-          <link rel="stylesheet" href="{{ asset('vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
-          <link rel="stylesheet" href="{{ asset('public/assets/style.css') }}">
+          <link rel="stylesheet" href="{{ asset('/css/reset.css') }}">
+          <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Jobeet</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
+    <div class="index">
+    {% block body %}
+        {% block header %}
+        <header>
+            <a href="#"> <img src="img/logoNoir.png" alt="Logo de la Page" Title="Retour à l'accueil" class="logoSite"></a>
+            <div class="ContenuNavBar">
+                <div class="blocRecherche">
+                    <label for="name">
+                        <input type="text" value="Rechercher un métier" id="barreRechercheAccueil" />
+                    </label>
+                    <button type="submit" name="button" id="bouttonRechercheAccueil">Recherche</button>
+                </div>
+                <div>
+                    <nav class="menus">
+                        <ul>
+                            <li class="deroulant"><a href="Metiers/listing-metiers.html">Toutes les fiches métier</a>
+                                <ul class="sous">
+                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Developpement</a></li>
+                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Environnements connectés</a></li>
+                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Ingenierie</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="ouSeRenseigner.html">Où se réorienter</a></li>
+                            <li class="deroulant">Comment se réorienter
+                                <ul class="sous">
+                                    <li class="sousLigner"><a href="#">Comment se mettre en valeur ?</a></li>
+                                    <li class="sousLigner"><a href="#">Tuto CV et lettre de motivation</a></li>
+                                </ul>
+                            </li>
+                            <li class="deroulant"><a href="pageContenuDuFooter/partenaire.html">Partenaires</a>
+                                <ul class="sous">
+                                    <li class="sousLigner"><a href="pageContenuDuFooter/partenaire.html#ecole">Ecole</a></li>
+                                    <li class="sousLigner"><a href="pageContenuDuFooter/partenaire.html#pro">Pro</a></li>
+                                    <li class="sousLigner"><a href="pageContenuDuFooter/partenaire.html#entreprise">Entreprises</a></li>
+                                    <li class="sousLigner"><a href="pageContenuDuFooter/partenaire.html#autres">Contacts</a></li>
+                                </ul>
+                            </li>
 
-        <div class="container">
-            <h5>Nicoals</h5>
-            {% block body %}{% endblock %}
-        </div>
-        {% block javascripts %}{% endblock %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        {% endblock %}
+
+        {% block main %}
+
+      {% endblock %}
+
+        {% block footer %}
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-p">
+                    <h2>Plus d'informations ?</h2>
+                    <p><a href="pageContenuDuFooter/plan.html">Plan du site</a></p>
+                    <p><a href="contact.html">Nous contacter</a></p>
+                    <p><a href="pageContenuDuFooter/apropos.html">A propos</a></p>
+                </div>
+                <div class="renseignement">
+                  <h2>Informations légales :</h2>
+                    <ul>
+                        <li><a href="pageContenuDuFooter/mentionsLegales.html">Mentions légales</a></li>
+                        <li><a href="pageContenuDuFooter/cookie.html">Politique de cookie</a></li>
+                        <li><a href="pageContenuDuFooter/rgpd.html">Politique RGPD</a></li>
+                    </ul>
+                </div>
+                <div class="social">
+                    <h2>Nos réseaux :</h2>
+                    <a href="#"><img src="img/facebook.png" title="Facebook" /> </a>
+                    <a href="#"><img src="img/twitter.png" title="Twitter" /></a>
+                </div>
+            </div>
+            <hr />
+            <p id="copyright">@Copyright IUT Informatique de La Rochelle</p>
+        </footer>
+        {% endblock %}
+    {% endblock %}
+    </div>
+
     </body>
 </html>

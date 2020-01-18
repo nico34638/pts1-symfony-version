@@ -1,0 +1,812 @@
+/*
+###############
+  Style du body
+###############
+*/
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ariel', trebuchet, helvetica, sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+h1 {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+h2 {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 25px;
+}
+
+p {
+    padding: 3px;
+    line-height: 1.6;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/*
+###############
+  Style du header
+###############
+*/
+
+header {
+    /**background-color: rgba(231, 231, 231);*/
+    /*background-color: #9d1a3a;*/
+    grid-area: header;
+    background-color: #F0F0F0;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+}
+
+
+/*
+###############
+  Style de la navbar
+###############
+*/
+
+.ContenuNavBar,
+.logoSite,
+.blocRecherche,
+.menus,
+.ContenuNavBar > div {
+    /* padding-bottom: 80px; */
+    display: flex;
+    align-self: center;
+    color: black;
+}
+
+.ContenuNavBar {
+    display: flex;
+    justify-content: space-between;
+    width: 65%;
+}
+
+.logoSite {
+    height: 40px;
+    width: 120px;
+}
+
+#bouttonRechercheAccueil {
+    display: flex;
+    align-self: center;
+    border: 2px solid rgb(225, 225, 230);
+    border-radius: 10px;
+    background-color: #EE720E;
+    color: white;
+    height: 30px;
+    padding: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
+#barreRechercheAccueil {
+    display: flex;
+    align-self: center;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 7px;
+    border: 2px solid rgb(225, 225, 230);
+    border-radius: 8px;
+    width: 250px;
+    margin-top: 10px;
+}
+
+.menus > ul {
+    display: flex;
+}
+
+.menus .deroulant {
+    position: relative;
+}
+
+.menus > ul > li {
+    padding: 5px 10px 10px 10px;
+}
+
+/* gestion decorations */
+
+.menus > ul > li:hover,
+.sousLigner:hover {
+    border-bottom: 2px solid black;
+}
+
+
+.menus > ul .sous {
+    top: 100%;
+    left : 0px;
+    position: absolute;
+    display: none;
+    margin-top: 3px;
+}
+
+.menus > ul > li:hover .sous {
+    display: block;
+    background-color: #efeeee;
+}
+
+.sous li {
+    padding: 10px;
+    text-align: center;
+}
+
+/*
+###############
+  Style Page accueil
+###############
+*/
+
+/* changement taille du titre1 sur l'image d'acceuil */
+.imageAccueil > h1 {
+    font-size: 98px;
+}
+/* changement taille des titre2 sur l'image d'acceuil */
+.imageAccueil > h2 {
+    font-size: 56px;
+}
+
+.img{
+  width: 30%;
+}
+
+/* affichage correcte de l'image du centre */
+.imageAccueil {
+    color: white;
+    background-image: url(../img/imageAccueil.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+/* reglage de la largeur de l'image d'acceuil */
+.imageAccueil img{
+  width: 22%;
+}
+
+.index .contenu{
+      width: 80%;
+      margin-top: 70px;
+      margin-bottom: 50px;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+.contenu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color : #F0F0F0;
+}
+
+.contenu article {
+    margin: 35px;
+    width: 100%;
+    display: flex;
+}
+
+.contenu article img{
+  width: 80%;
+  margin: 25px;
+}
+
+.contenu article h1{
+  padding-left: 0px;
+  text-decoration: underline;
+}
+
+/* changement de la coleur du titre quand on le survole */
+.contenu article h1:hover{
+  color: #EE720E;
+}
+
+.article-index{
+  margin: 80px;
+}
+
+#voirPlusIndex{
+  background-color: #EE720E;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 20px;
+  height: 60px;
+  width: 260px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  margin: 50px;
+  margin-left: 50%;
+}
+
+
+
+/*
+###############
+  Style Page listing metiers
+###############
+*/
+
+/* reglage de la disposition en grille */
+.page-linsting-disposition {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-template-areas:
+        "header header header header"
+        "search search search search"
+        ". container container ."
+        "footer  footer footer footer";
+    background-color: #FFFFFF;
+}
+
+/* reglage de la disposition en flexxbox */
+.filterAndSearch {
+    grid-area: search;
+    display: flex;
+    background-color: #E7E7E7;
+    flex-direction: row;
+    padding: 10px 25px 10px 30px;
+    justify-content: space-around;
+    text-align: center;
+    padding: 25px 0px 25px 0px;
+    margin-top: 75px;
+}
+
+/* reglage des select en changeant la bordure */
+#search-keywords {
+    padding: 8px;
+    font-size: 12px;
+    border: 2px solid rgb(225, 225, 230);
+    border-radius: 4px;
+    width: 70%;
+    margin-top: 10px;
+}
+
+#select-filter {
+    padding: 6px;
+    font-size: 12px;
+    border: 2px solid rgb(225, 225, 230);
+    border-radius: 4px;
+    width: 60%;
+    margin-top: 10px;
+}
+
+#button-search {
+    border: 2px solid rgb(225, 225, 230);
+    border-radius: 10px;
+    background-color: #EE720E;
+    color: white;
+    width: 150px;
+    height: 45px;
+    margin-top: 9px;
+}
+
+#button-search:hover {
+    opacity: 0.75;
+}
+
+.box-all {
+    grid-area: container;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.box-metiers {
+    background-color: #F0F0F0;
+    padding: 35px;
+    padding-right: 0px;
+    display: grid;
+    grid-template-columns: 0.40fr 0.5fr;
+}
+
+.box-metiers h2 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.box-metiers img{
+  margin-top: 25px;
+  width: 100%;
+}
+
+.box-metiers img:hover{
+  opacity: 0.75;
+}
+
+.box-metiers a {
+    padding-top: 20px;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.box-metiers a:hover {
+    text-decoration: underline;
+}
+
+.box-metiers p {
+    padding-bottom: 15px;
+    padding-top: 15px;
+    font-weight: lighter;
+}
+
+
+.box-metiers h2:hover{
+    color: #EE720E;
+}
+
+
+#voirPlus {
+    background-color: #EE720E;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    height: 60px;
+    width: 160px;
+    font-size: 20px;
+    color: white;
+}
+
+#voirPlus:hover {
+    opacity: 0.75;
+}
+
+#box-metiers-date {
+    font-size: 10px;
+    font-style: italic;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+#title-metiers {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-family: "Cardo", serif;
+    padding-left: 34px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.box-metiers-content {
+    width: 300px;
+    padding-left: 15px;
+}
+
+.box-metiers hr {
+    height: 1px;
+    margin: -0.5em 0;
+    padding: 0;
+    color: #F00;
+    border: 1px solid #b5b5b5;
+    border-radius: 9px;
+}
+
+/*
+###############
+  Page fiche métiers
+###############
+*/
+
+.fiche-metiers{
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 2fr 5fr 5fr 2fr;
+  grid-template-areas:
+      "header header header header"
+      "nav nav nav nav"
+      "search search search search"
+      ". content content ."
+      ". nav2 nav2 ."
+      "footer  footer footer footer";
+}
+.fiche-metiers .article{
+    grid-area: content;
+    margin-top: 120px;
+    background-color: #F0F0F0;
+    margin-bottom: 90px;
+}
+
+.fiche-metiers h1{
+    padding-top: 25px;
+    padding-bottom: 45px;
+    text-align: center;
+    font-size: 35px;
+}
+
+
+.article img{
+    width: 20vh;
+}
+
+.fiche-metiers h2 {
+    padding: 14px;
+    padding-left: 0px;
+}
+.fiche-metiers h3 {
+    padding-left: 0px;
+}
+
+
+.fiche-metiers h3 {
+    font-size: 20px;
+    padding: 12px;
+    padding-left: 0px;
+    text-align: center;
+}
+
+.fiche-metiers h4 {
+    font-size: 18px;
+    padding: 15px;
+    padding-left: 0px;
+}
+
+.fiche-metiers p {
+    font-size: 14px;
+    padding: 10px;
+}
+
+.job_box {
+    display: block;
+    margin: 30px;
+}
+
+.job_small_box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+
+#card-box {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.img-card {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+    background-color: white;
+}
+
+.proposition {
+    grid-area: nav2;
+    display: flex;
+    justify-content: space-around;
+}
+
+.proposition article{
+    padding: 25px 25px;
+    margin: 25px;
+    margin-left: 25px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);*/
+    background-color: white;
+}
+
+#qualifications > p > a{
+    text-decoration: underline;
+    color: blue;
+}
+
+.proposition img{
+  width: 100%;
+}
+
+.proposition > article{
+    background-color: white;
+    flex: 1;
+}
+
+.text {
+    padding: 0 20px 20px;
+}
+
+#voirPlus2{
+    margin-top: 25px;
+    background-color: #EE720E;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    height: 60px;
+    width: 85%;
+    font-size: 20px;
+    color: white;
+}
+
+#download{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    background-color: #EE720E;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    height: 60px;
+    width: 35%;
+    font-size: 20px;
+    color: white;
+}
+
+
+
+/*
+###############
+  Page contact
+###############
+*/
+
+/* Affichage correct du cadre contenant tout les champs à remplir */
+.contact {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 2fr 5fr 5fr 2fr;
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        "search search search search"
+        ". content content ."
+        "footer  footer footer footer";
+}
+
+/* Mise en forme de la page */
+.content {
+    border-radius: 5px;
+    background-color: #F0F0F0;
+    padding: 20px;
+    grid-area: content;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    padding-right: 75px;
+    padding-left: 75px;
+}
+
+/* Mise en forme des champs à remplir */
+#input,
+#message {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/* Bouton d'envoie du formulaire rempli */
+#InputSubmit {
+    background-color: #EE720E;
+    width: 120px;
+    color: white;
+    padding: 18px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Modification affichage des titres de chaque champs */
+.contact label {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Modification de la position du titre de la page */
+.contact h1 {
+    text-align: center;
+}
+
+/*
+###############
+  Page ou se renseigner a propos, mentions légales, et cookie, rgpd
+###############
+*/
+.page-ou-se-renseigner {
+    margin: 0px;
+    display: grid;
+    grid-template-columns: 2fr 5fr 5fr 2fr;
+    grid-template-areas:
+        "header header header header"
+        "nav nav nav nav"
+        ". article article ."
+        "footer  footer footer footer";
+}
+
+.page-ou-se-renseigner article {
+    grid-area: article;
+    margin-top: 100px;
+    background-color: #F0F0F0;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 40px;
+    padding: 45px;
+}
+
+.article-renseigner p {
+    font-size: 14px;
+    padding: 12px;
+}
+
+.article-renseigner li {
+    padding: 4px;
+    list-style: disc;
+    color: black;
+    margin-left: 55px;
+}
+
+.article-renseigner li a {
+    color: black;
+}
+
+.article-deuxieme-part {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.article-deuxieme-part li {
+    margin-left: 85px;
+}
+
+.partenaires ul {
+    margin-left: 85px;
+}
+
+.liens-ext div {
+    padding: 20px;
+}
+
+#voirPlus {
+    margin-left: 20px;
+}
+
+#cookie {
+    height: 500px;
+}
+
+.mentions p {
+    padding: 0px;
+    margin: 0px;
+}
+
+/*
+###############
+  Style Footer
+###############
+*/
+.footer {
+    grid-area: footer;
+    background-color: #F0F0F0;
+    padding: 20px 25px;
+    margin-bottom: 0px;
+    height: 100%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px;
+}
+
+.footer-p {
+    font-weight: 500;
+    margin: 20 53px;
+}
+
+.footer h2 {
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 0px;
+}
+
+.footer-p p {}
+
+.footer a {
+    text-decoration: inherit;
+    color: black;
+}
+
+.footer-p a:hover {
+    text-decoration: inherit;
+}
+
+.footer ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.footer .social a {
+    opacity: .5;
+    padding-right: 15px;
+    padding-left: 15px;
+    text-decoration: inherit;
+}
+
+.footer .social a:hover {
+    opacity: 1;
+}
+
+.footer hr {
+    border: 1px solid #b5b5b5;
+    border-radius: 9px;
+    margin: 10px 55px;
+}
+
+.footer li {
+    padding: 3px 0px;
+}
+
+.footer #copyright {
+    margin-left: 65px;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 15px;
+}

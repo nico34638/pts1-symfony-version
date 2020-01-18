@@ -1,16 +1,68 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Bimi {% endblock %}
 
-{% block body %}
+{% block main %}
 
-<div class="example-wrapper">
-    <h1>Hello  ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Dev/tp/api/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Dev/tp/api/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <main>
+            <div class="image">
+                <section class="imageAccueil">
+                    <img src="img/logoBlanc.png" alt="Logo BIMI">
+                    <h2>Bibliothèque Interactive des Métiers de l'Informatique</h2>
+                </section>
+            </div>
+            <!-- Contenu de la pages -->
+            <div class="contenu">
+                <article>
+                    <div class="img">
+                        <a href="Metiers\PageMetiers\fiche_metier_type.html"><img src="img/webDesigner.jpg" alt="Logo de la Page" class="imgArticle"></a>
+                    </div>
+                    <div clas="article-index">
+                      <a href="Metiers/PageMetiers/fiche_web_designer.html">
+                            <h1>Web designer</h1>
+                        </a>
+                        <p>Fiche métier de Web designer accompagnée d'un interview de professionnel.</p>
+                        <a href="Metiers\PageMetiers\fiche_web_designer.html"><input type="submit" value="Voir plus" id="voirPlus"/></a>
+                    </div>
+                    </hr>
+                </article>
+
+                <article>
+                    <div class="img">
+                        <a href="Metiers\PageMetiers\fiche_metier_IA.html"><img src="img/IA.jfif" alt="Logo de la Page" class="imgArticle"></a>
+                    </div>
+                    <div clas="article-index">
+                        <a href="Metiers\PageMetiers\fiche_metier_IA_type.html">
+                            <h1>Ingénieur en intelligence artificielle</h1>
+                        </a>
+                        <p>Fiche métier Ingénieur en intelligence artificielle contenant des informations sur les formations, le salaire...</p>
+                        <a href="Metiers\PageMetiers\fiche_metier_IA_type.html"><input type="submit" value="Voir plus" id="voirPlus"/></a>
+
+                    </div>
+                </article>
+
+                </hr>
+                <article>
+                    <div class="img">
+                        <a href="Metiers\PageMetiers\fiche_expert_cyber.html"><img src="img/avatar_cyber.png" alt="Logo de la Page" class="imgArticle"></a>
+                    </div>
+                    <div clas="article-index">
+                        <a href="Metiers\PageMetiers\fiche_expert_cyber.html">
+                            <h1>Expert cyber-sécurité</h1>
+                        </a>
+                        <p>Fiche métier expert cyber-sécurité contenant des informations sur les formations, le salaire...</p>
+                        <a href="Metiers\PageMetiers\fiche_expert_cyber.html"><input type="submit" value="Voir plus" id="voirPlus"/></a>
+                    </div>
+                </article>
+                <a href="Metiers/listing-metiers.html"><input type="submit" value="Voir plus de fiche métier" id="voirPlusIndex"/></a>
+
+
+            </div>
+
+
+
+
+        </main>
+
 {% endblock %}

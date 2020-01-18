@@ -15,5 +15,3 @@ framework:
     php_errors:
         log: true
     #assets
-    assets:
-      base_path: 'public/assets'
