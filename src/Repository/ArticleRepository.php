@@ -33,13 +33,26 @@ class ArticleRepository extends ServiceEntityRepository
             ->getQuery();
     }
 
-
+    /**
+      * @return Article[] Returns an array of Article objects
+      */
     public function findAllArticle()
     {
       return $this->createQueryBuilder('a')
           ->andWhere('a.title = :val')
           ->setParameter('val', $value)
           ->getQuery();
+    }
+
+    /**
+      * @return Article[] Returns an array of Article objects
+      */
+    public function fintLatest(): array
+    {
+      return $this->createQueryBuilder('a')
+          ->setMaxResults(5)
+          ->getQuery()
+          ->getResult();
     }
 
     /*

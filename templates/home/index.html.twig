@@ -42,6 +42,22 @@
                     </div>
                 </article>
 
+                {% for article in articles %}
+                <article>
+                    <div class="img">
+                        <a href="Metiers\PageMetiers\fiche_metier_IA.html"><img src="{{ article.imglink }}" alt="Logo de la Page" class="imgArticle"></a>
+                    </div>
+                    <div clas="article-index">
+                        <a href="Metiers\PageMetiers\fiche_metier_IA_type.html">
+                            <h1>{{ article.title }}</h1>
+                        </a>
+                        <p>{{ article.extract }}</p>
+                        <a href="Metiers\PageMetiers\fiche_metier_IA_type.html"><input type="submit" value="Voir plus" id="voirPlus"/></a>
+
+                    </div>
+                </article>
+                {% endfor %}
+
                 </hr>
                 <article>
                     <div class="img">

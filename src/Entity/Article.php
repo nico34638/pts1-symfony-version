@@ -22,7 +22,17 @@ class Article
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=2555555)
+     * @ORM\Column(type="string", length=100)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="string", length=500)
+     */
+    private $extract;
+
+    /**
+     * @ORM\Column(type="text")
      */
     private $content;
 
@@ -30,6 +40,13 @@ class Article
      * @ORM\Column(type="string", length=255)
      */
     private $author;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imglink;
+
+
 
     public function getId(): ?int
     {
@@ -44,6 +61,30 @@ class Article
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getExtract(): ?string
+    {
+        return $this->extract;
+    }
+
+    public function setExtract(string $extract): self
+    {
+        $this->extract = $extract;
 
         return $this;
     }
@@ -71,4 +112,18 @@ class Article
 
         return $this;
     }
+
+    public function getImglink(): ?string
+    {
+        return $this->imglink;
+    }
+
+    public function setImglink(string $imglink): self
+    {
+        $this->imglink = $imglink;
+
+        return $this;
+    }
+
+
 }
