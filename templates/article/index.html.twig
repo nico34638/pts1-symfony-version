@@ -57,12 +57,12 @@
               <div class="box-metiers-content">
                   <p id="box-metiers-date">Publié le 15 janvier 2020</p>
                   <h2 id="title-metiers">
-                          <a href="PageMetiers/fiche_metier_IA.html">{{ article.title }}</a>
+                          <a href="{{ path('article.show', {slug: article.slug, id: article.id}) }}">{{ article.title }}</a>
                       </h2>
                   <hr />
                   <div class="pagaraph">
                       <p>{{ article.extract }}</p>
-                      <a href="PageMetiers/fiche_metier_IA.html">
+                      <a href="{{ path('article.show', {slug: article.slug, id: article.id}) }}">
                           <input type="submit" value="Voir plus" id="voirPlus" />
                       </a>
                   </div>

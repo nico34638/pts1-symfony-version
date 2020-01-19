@@ -46,6 +46,11 @@ class Article
      */
     private $imglink;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateUpdate;
+
 
 
     public function getId(): ?int
@@ -121,6 +126,18 @@ class Article
     public function setImglink(string $imglink): self
     {
         $this->imglink = $imglink;
+
+        return $this;
+    }
+
+    public function getDateUpdate(): ?\DateTimeInterface
+    {
+        return $this->dateUpdate;
+    }
+
+    public function setDateUpdate(\DateTimeInterface $dateUpdate): self
+    {
+        $this->dateUpdate = $dateUpdate;
 
         return $this;
     }

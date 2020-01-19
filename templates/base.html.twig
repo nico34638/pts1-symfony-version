@@ -15,7 +15,7 @@
     {% block body %}
         {% block header %}
         <header>
-            <a href="#"> <img src="img/logoNoir.png" alt="Logo de la Page" Title="Retour à l'accueil" class="logoSite"></a>
+            <a href="{{ path('home') }}"> <img src="{{ asset('img/logoNoir.png') }}" alt="Logo de la Page" Title="Retour à l'accueil" class="logoSite"></a>
             <div class="ContenuNavBar">
                 <div class="blocRecherche">
                     <label for="name">
@@ -26,11 +26,11 @@
                 <div>
                     <nav class="menus">
                         <ul>
-                            <li class="deroulant"><a href="Metiers/listing-metiers.html">Toutes les fiches métier</a>
+                            <li class="deroulant"><a href="{{ path('article.index') }}">Toutes les fiches métier</a>
                                 <ul class="sous">
-                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Developpement</a></li>
-                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Environnements connectés</a></li>
-                                    <li class="sousLigner"><a href="Metiers/listing-metiers.html">Ingenierie</a></li>
+                                    <li class="sousLigner"><a href="{{ path('article.index') }}">Developpement</a></li>
+                                    <li class="sousLigner"><a href="{{ path('article.index') }}">Environnements connectés</a></li>
+                                    <li class="sousLigner"><a href="{{ path('article.index') }}">Ingenierie</a></li>
                                 </ul>
                             </li>
                             <li><a href="ouSeRenseigner.html">Où se réorienter</a></li>
@@ -79,8 +79,8 @@
                 </div>
                 <div class="social">
                     <h2>Nos réseaux :</h2>
-                    <a href="#"><img src="img/facebook.png" title="Facebook" /> </a>
-                    <a href="#"><img src="img/twitter.png" title="Twitter" /></a>
+                    <a href="#"><img src="{{ asset('img/facebook.png') }}" title="Facebook" /> </a>
+                    <a href="#"><img src="{{ asset('img/twitter.png') }}" title="Twitter" /></a>
                 </div>
             </div>
             <hr />

@@ -55,6 +55,17 @@ class ArticleRepository extends ServiceEntityRepository
                     ->getResult();
     }
 
+    /**
+      * @return Article[] Returns an array of Article objects
+      */
+    public function findTrois(): array
+    {
+        return $this->createQueryBuilder('a')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Article

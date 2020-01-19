@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche metier {% endblock %}
+{% block class %}{% endblock %}
+
+{% block main %}
+
+<div class="fiche-metiers">
+      <article class="article">
+        <h1>{{ article.title }}</h1>
+        <div id="card-box">
+            <div class="card">
+                <img class="img-card" src="{{ asset(article.imglink) }}" alt="Avatar" style="width:100%">
+                <div class="container">
+                    <p><b>{{ article.extract }}</b></p>
+                </div>
+            </div>
+        </div>
+        {{ article.content | raw}}
+        <div class="proposition">
+            {% for proposition in propositions %}
+            <article>
+                <img src="{{ asset(proposition.imglink)}}" alt="Sample photo">
+                <div class="text">
+                    <h3>{{ proposition.title }}</h3>
+                    <p>{{ proposition.extract }}</p>
+                    <a href="{{ path('article.show', {slug: proposition.slug, id: proposition.id}) }}"><input type="submit" value="Voir plus" id="voirPlus2"/></a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+      </article>
+
+    </div>
+
+{% endblock %}
