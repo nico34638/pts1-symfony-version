@@ -1,0 +1,157 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Metiers {% endblock %}
+{% block class %}page-linsting-disposition{% endblock %}
+
+{% block main %}
+
+          <div class="filterAndSearch">
+              <div class="element-filterAndSearch">
+                  <label for="metiers-select">
+                      Selectionner une catégorie:
+                      <select id="select-filter" name="metiers">
+                          <option>Developpement</option>
+                          <option>Objets connectés</option>
+                      </select>
+                  </label>
+              </div>
+              <div class="element-filterAndSearch">
+                  <label for="metiers-select">
+                      Selectionner un metier:
+                      <select id="select-filter" name="metiers">
+                          <option>Chosir une Option</option>
+                          <option>Developpeur Web Fullstack</option>
+                          <option>Developpeur Web Backend</option>
+                          <option>Developpeur Web Front End</option>
+                      </select>
+                  </label>
+              </div>
+              <div class="element-filterAndSearch">
+                  <label for="qualification-select">
+                      Selectionner une qualification:
+                      <select id="select-filter" name="metiers">
+                          <option>Bac</option>
+                          <option>Bac +2</option>
+                          <option>Bac +3</option>
+                          <option>Master 1</option>
+                          <option>Master 2</option>
+                      </select>
+                  </label>
+              </div>
+              <div class="element-filterAndSearch">
+                  <label for="name">
+                      Recherche de mots clés:
+                      <input type="text" value="Mots clés" id="search-keywords" />
+                  </label>
+              </div>
+              <div class="element-filterAndSearch">
+                  <button type="submit" name="button" id="button-search">Recherche</button>
+              </div>
+          </div>
+          <div class="box-all">
+          {% for article in articles %}
+          <div class="box-metiers">
+              <a href="PageMetiers/fiche_metier_IA.html" class="article-img">
+                  <img src="{{ article.imglink }}" alt="Article" />
+              </a>
+              <div class="box-metiers-content">
+                  <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                  <h2 id="title-metiers">
+                          <a href="PageMetiers/fiche_metier_IA.html">{{ article.title }}</a>
+                      </h2>
+                  <hr />
+                  <div class="pagaraph">
+                      <p>{{ article.extract }}</p>
+                      <a href="PageMetiers/fiche_metier_IA.html">
+                          <input type="submit" value="Voir plus" id="voirPlus" />
+                      </a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+              <div class="box-metiers">
+                  <a href="PageMetiers/fiche_metier_IA.html" class="article-img">
+                      <img src="../img/IA.jfif" alt="Article" />
+                  </a>
+                  <div class="box-metiers-content">
+                      <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                      <h2 id="title-metiers">
+                              <a href="PageMetiers/fiche_metier_IA.html">Ingénieur en intelligence artificielle</a>
+                          </h2>
+                      <hr />
+                      <div class="pagaraph">
+                          <p>Fiche métier Ingénieur en intelligence artificielle contenant des informations sur les formations, le salaire...</p>
+                          <a href="PageMetiers/fiche_metier_IA.html">
+                              <input type="submit" value="Voir plus" id="voirPlus" />
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <div class="box-metiers">
+                  <a href="PageMetiers/fiche_web_designer.html" class="article-img">
+                      <img src="../img/webDesigner.jpg" alt="Article" />
+                  </a>
+                  <div class="box-metiers-content">
+                      <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                      <h2 id="title-metiers">
+                              <a href="PageMetiers/fiche_web_designer.html">Web designer</a>
+                          </h2>
+                      <hr />
+                      <p>Fiche métier de Web designer accompagnée d'un interview de professionnel.</p>
+                      <a href="PageMetiers/fiche_web_designer.html">
+                          <input type="submit" value="Voir plus" id="voirPlus" />
+                      </a>
+                  </div>
+              </div>
+              <div class="box-metiers">
+                  <a href="PageMetiers/fiche_level_designer.html" class="article-img">
+                      <img src="../img/level-designer.jpg" alt="Article" />
+                  </a>
+                  <div class="box-metiers-content">
+                      <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                      <h2 id="title-metiers">
+                              <a href="PageMetiers/fiche_level_designer.html">Level designer</a>
+                          </h2>
+                      <hr />
+                      <p>Fiche métier level designer contenant des informations sur les formations, le salaire...</p>
+                      <a href="PageMetiers/fiche_level_designer.html">
+                          <input type="submit" value="Voir plus" id="voirPlus" />
+                      </a>
+                  </div>
+              </div>
+              <div class="box-metiers">
+                  <a href="PageMetiers/fiche_game_developper.html" class="article-img">
+                      <img src="../img/image_gamedev.jpg" alt="Article" />
+                  </a>
+                  <div class="box-metiers-content">
+                      <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                      <h2 id="title-metiers">
+                              <a href="PageMetiers/fiche_game_developper.html">Game developpeur</a>
+                          </h2>
+                      <hr />
+                      <p>Fiche métier game developpeur contenant des informations sur les formations, le salaire...</p>
+                      <a href="PageMetiers/fiche_game_developper.html">
+                          <input type="submit" value="Voir plus" id="voirPlus" />
+                      </a>
+                  </div>
+              </div>
+              <div class="box-metiers">
+                  <a href="PageMetiers/fiche_expert_cyber.html" class="article-img">
+                      <img src="../img/avatar_cyber.png" alt="Article" />
+                  </a>
+                  <div class="box-metiers-content">
+                      <p id="box-metiers-date">Publié le 15 janvier 2020</p>
+                      <h2 id="title-metiers">
+                              <a href="PageMetiers/fiche_expert_cyber.html">Expert cyber-sécurité</a>
+                          </h2>
+                      <hr />
+                      <p>Fiche métier expert cyber-sécurité contenant des informations sur les formations, le salaire...</p>
+                      <a href="PageMetiers/fiche_expert_cyber.html">
+                          <input type="submit" value="Voir plus" id="voirPlus" />
+                      </a>
+                  </div>
+              </div>
+
+          </div>
+
+{% endblock %}

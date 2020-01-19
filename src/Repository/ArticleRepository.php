@@ -27,33 +27,34 @@ class ArticleRepository extends ServiceEntityRepository
 
     public function findByTitle($value) : QueryBuilder
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.title = :val')
-            ->setParameter('val', $value)
-            ->getQuery();
+          return $this->createQueryBuilder('a')
+              ->andWhere('a.title = :val')
+              ->setParameter('val', $value)
+              ->getQuery();
     }
 
-    /**
-      * @return Article[] Returns an array of Article objects
-      */
-    public function findAllArticle()
-    {
-      return $this->createQueryBuilder('a')
-          ->andWhere('a.title = :val')
-          ->setParameter('val', $value)
-          ->getQuery();
-    }
 
     /**
       * @return Article[] Returns an array of Article objects
       */
     public function fintLatest(): array
     {
-      return $this->createQueryBuilder('a')
-          ->setMaxResults(5)
-          ->getQuery()
-          ->getResult();
+        return $this->createQueryBuilder('a')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult();
     }
+
+    /**
+      * @return Article[] Returns an array of Article objects
+      */
+    public function findAllArticle():array
+    {
+        return $this->createQueryBuilder('a')
+                    ->getQuery()
+                    ->getResult();
+    }
+
 
     /*
     public function findOneBySomeField($value): ?Article

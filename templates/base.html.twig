@@ -10,7 +10,8 @@
         {% endblock %}
     </head>
     <body>
-    <div class="index">
+
+    <div class="{% block class %}{% endblock %}">
     {% block body %}
         {% block header %}
         <header>
@@ -57,7 +58,7 @@
 
         {% block main %}
 
-      {% endblock %}
+        {% endblock %}
 
         {% block footer %}
         <footer class="footer">
