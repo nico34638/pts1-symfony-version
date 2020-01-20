@@ -11,7 +11,7 @@ use App\Repository\ArticleRepository;
  * @Route("/admin/article")
  */
 class AdminArticleController extends AbstractController
-{
+{   
     /**
      * @Route("/", name="admin.article.index", methods="GET")
      */
