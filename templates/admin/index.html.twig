@@ -2,9 +2,13 @@
 
 {% block title %}Hello AdminArticleController!{% endblock %}
 
+{% block class %}admin{% endblock %}
 
-
-
-{% block body %}
-
+{% block main %}
+    <div class="container">
+      <h1>sur quelle page allez vous</h1>
+      <ul>
+        <li><a href="{{ path('admin.article.index') }}">Article Admin</a></li>
+      </ul>
+    </div>
 {% endblock %}

@@ -267,6 +267,33 @@ header {
   margin-left: 50%;
 }
 
+/*
+###############
+  Style Page Amdin
+###############
+*/
+
+.admin{
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-areas:
+      "header header header header"
+      ". container container ."
+      "footer  footer footer footer";
+  background-color: #FFFFFF;
+}
+
+.admin .container{
+  grid-area: container;
+  margin-top: 120px;
+  background-color: #F0F0F0;
+  margin-bottom: 90px;
+  padding: 25px;
+  height: 1000px;
+}
+
+
 
 
 /*
