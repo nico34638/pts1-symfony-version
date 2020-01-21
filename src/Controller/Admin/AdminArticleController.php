@@ -8,6 +8,8 @@ use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Form\ArticleType;
+
 /**
  * @Route("/admin/article")
  */
@@ -40,6 +42,29 @@ class AdminArticleController extends AbstractController
         ]);
     }
 
+    /**
+     *@Route("/create", name="admin.article.new")
+     *@param Request $request
+     */
+    public function new(Request $request)
+    {
+        $article = new Article();
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+          $this->em->persist($article);
+          $this->em->flush();
+          $this->addFlash('success', 'Crée avec succès');
+          return $this->redirectToRoute('admin.article.index');
+        }
+
+        return $this->render('admin/article/new.html.twig',[
+            'article' => $article,
+            'form' => $form->createView()
+        ]);
+    }
+    
     /**
      * @Route("/edit", name="admin.article.edit", methods="GET")
      */
