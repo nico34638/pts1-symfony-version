@@ -16,7 +16,9 @@
                 </div>
             </div>
         </div>
-        {{ article.content | raw}}
+        <div class="fr-view">
+            {{ article.content | raw}}
+        </div>
         <div class="proposition">
             {% for proposition in propositions %}
             <article>
