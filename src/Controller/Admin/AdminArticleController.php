@@ -64,14 +64,27 @@ class AdminArticleController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-    
+
     /**
-     * @Route("/edit", name="admin.article.edit", methods="GET")
+     * @Route("/edit/{id}", name="admin.article.edit", methods="GET|POST")
+     *@param Article $article
+     *@param Request $request
+     *@return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit()
+    public function edit(Article $article, Request $request)
     {
-        return $this->render('admin/article/index.html.twig', [
-            'articles' => $this->articleRepository->findAllArticle()
+        $form = $this->createForm(ArticleType::class, $article);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+          $this->em->flush();
+          $this->addFlash('success', 'Modifié avec succès');
+          return $this->redirectToRoute('admin.article.index');
+        }
+
+        return $this->render('admin/article/edit.html.twig', [
+            'article' => $article,
+            'form' => $form->createView()
         ]);
     }
 

@@ -30,4 +30,16 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController'
         ]);
     }
+    /**
+     * @Route("/saveurlc", name="saveURLC")
+     */
+    public function saveURLC()
+    {
+        $articles = $this->articleRepository->fintLatest();
+        return $this->render('home/index.html.twig', [
+            'articles' => $articles,
+            'controller_name' => 'HomeController'
+        ]);
+    }
+
 }
